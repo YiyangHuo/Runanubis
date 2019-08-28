@@ -72,14 +72,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>.\src;.\tinyxml;$(IncludePath)</IncludePath>
+    <IncludePath>.\src;C:\internship\Runanubisandplot\tinyxml;.\tinyxml;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\internship\Runanubisandplot\tinyxml;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -154,86 +153,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Runanubisandplot.cpp" />
-    <ClCompile Include="tinyxml\tinystr.cpp" />
-    <ClCompile Include="tinyxml\tinyxml.cpp" />
-    <ClCompile Include="tinyxml\tinyxmlerror.cpp" />
-    <ClCompile Include="tinyxml\tinyxmlparser.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="tinyxml\docs\annotated.html" />
-    <None Include="tinyxml\docs\classes.html" />
-    <None Include="tinyxml\docs\classTiXmlAttribute-members.html" />
-    <None Include="tinyxml\docs\classTiXmlAttribute.html" />
-    <None Include="tinyxml\docs\classTiXmlBase-members.html" />
-    <None Include="tinyxml\docs\classTiXmlBase.html" />
-    <None Include="tinyxml\docs\classTiXmlComment-members.html" />
-    <None Include="tinyxml\docs\classTiXmlComment.html" />
-    <None Include="tinyxml\docs\classTiXmlDeclaration-members.html" />
-    <None Include="tinyxml\docs\classTiXmlDeclaration.html" />
-    <None Include="tinyxml\docs\classTiXmlDocument-members.html" />
-    <None Include="tinyxml\docs\classTiXmlDocument.html" />
-    <None Include="tinyxml\docs\classTiXmlElement-members.html" />
-    <None Include="tinyxml\docs\classTiXmlElement.html" />
-    <None Include="tinyxml\docs\classTiXmlHandle-members.html" />
-    <None Include="tinyxml\docs\classTiXmlHandle.html" />
-    <None Include="tinyxml\docs\classTiXmlNode-members.html" />
-    <None Include="tinyxml\docs\classTiXmlNode.html" />
-    <None Include="tinyxml\docs\classTiXmlPrinter-members.html" />
-    <None Include="tinyxml\docs\classTiXmlPrinter.html" />
-    <None Include="tinyxml\docs\classTiXmlText-members.html" />
-    <None Include="tinyxml\docs\classTiXmlText.html" />
-    <None Include="tinyxml\docs\classTiXmlUnknown-members.html" />
-    <None Include="tinyxml\docs\classTiXmlUnknown.html" />
-    <None Include="tinyxml\docs\classTiXmlVisitor-members.html" />
-    <None Include="tinyxml\docs\classTiXmlVisitor.html" />
-    <None Include="tinyxml\docs\deprecated.html" />
-    <None Include="tinyxml\docs\files.html" />
-    <None Include="tinyxml\docs\functions.html" />
-    <None Include="tinyxml\docs\functions_0x63.html" />
-    <None Include="tinyxml\docs\functions_0x64.html" />
-    <None Include="tinyxml\docs\functions_0x65.html" />
-    <None Include="tinyxml\docs\functions_0x66.html" />
-    <None Include="tinyxml\docs\functions_0x67.html" />
-    <None Include="tinyxml\docs\functions_0x69.html" />
-    <None Include="tinyxml\docs\functions_0x6c.html" />
-    <None Include="tinyxml\docs\functions_0x6e.html" />
-    <None Include="tinyxml\docs\functions_0x6f.html" />
-    <None Include="tinyxml\docs\functions_0x70.html" />
-    <None Include="tinyxml\docs\functions_0x71.html" />
-    <None Include="tinyxml\docs\functions_0x72.html" />
-    <None Include="tinyxml\docs\functions_0x73.html" />
-    <None Include="tinyxml\docs\functions_0x74.html" />
-    <None Include="tinyxml\docs\functions_0x75.html" />
-    <None Include="tinyxml\docs\functions_0x76.html" />
-    <None Include="tinyxml\docs\functions_enum.html" />
-    <None Include="tinyxml\docs\functions_func.html" />
-    <None Include="tinyxml\docs\functions_func_0x63.html" />
-    <None Include="tinyxml\docs\functions_func_0x64.html" />
-    <None Include="tinyxml\docs\functions_func_0x65.html" />
-    <None Include="tinyxml\docs\functions_func_0x66.html" />
-    <None Include="tinyxml\docs\functions_func_0x67.html" />
-    <None Include="tinyxml\docs\functions_func_0x69.html" />
-    <None Include="tinyxml\docs\functions_func_0x6c.html" />
-    <None Include="tinyxml\docs\functions_func_0x6e.html" />
-    <None Include="tinyxml\docs\functions_func_0x70.html" />
-    <None Include="tinyxml\docs\functions_func_0x71.html" />
-    <None Include="tinyxml\docs\functions_func_0x72.html" />
-    <None Include="tinyxml\docs\functions_func_0x73.html" />
-    <None Include="tinyxml\docs\functions_func_0x74.html" />
-    <None Include="tinyxml\docs\functions_func_0x75.html" />
-    <None Include="tinyxml\docs\functions_func_0x76.html" />
-    <None Include="tinyxml\docs\functions_rela.html" />
-    <None Include="tinyxml\docs\functions_vars.html" />
-    <None Include="tinyxml\docs\hierarchy.html" />
-    <None Include="tinyxml\docs\index.html" />
-    <None Include="tinyxml\docs\pages.html" />
-    <None Include="tinyxml\docs\tinystr_8h_source.html" />
-    <None Include="tinyxml\docs\tinyxml_8h_source.html" />
-    <None Include="tinyxml\docs\tutorial0.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="tinyxml\tinystr.h" />
-    <ClInclude Include="tinyxml\tinyxml.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
