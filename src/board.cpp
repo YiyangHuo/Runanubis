@@ -5,32 +5,13 @@ Board::Board(char**& argv):_xmlfilename(argv[1]),_excufilename(argv[2]),_plotfil
 	getFileNames(argv_str, ".o");
 	getFileNames(argv_str, ".n");
 	classifytimes();
-	modifytimes();
 }
 
 void Board::runanubis()
 {
 
 }
-void Board::classifytimes(){
-	for (string filename : _ofilenames) {
-		OFile thefile = OFile(filename);
-		getinmatch(thefile);
-	}
-}
-
-void Board::getinmatch(OFile thefile)
-{
-	for (auto match : _matches) {
-		if (match.equals(thefile.getfilename)) {
-			match.addname(thefile.getfilename);
-			return;
-		}
-		_matches.push_back(Matches(thefile.getfilename, thefile.gettimespan));
-	}
-}
-
-void Board::getFileNames(const std::string dir, std::string ending)
+void Board::getFileNames(std::string dir, std::string ending)
 {
 	for (const auto& entry : fs::directory_iterator(dir)) {
 		string fileName = entry.path().filename().string();
@@ -46,6 +27,24 @@ void Board::getFileNames(const std::string dir, std::string ending)
 			else if (ending._Equal(".xtr")) {
 				_nfilenames.push_back(fileName);
 			}
+		}
+	}
+}
+void Board::classifytimes(){
+	for (string filename : _ofilenames) {
+		OFile thefile = OFile(filename);
+		getinmatch(thefile);
+	}
+}
+
+void Board::getinmatch(OFile thefile)
+{
+	for (Matches match : _matches) {
+		if (match.equals(thefile.getfilename)) {
+			match.addname(thefile.getfilename);
+			return;
+
+			_matches.push_back(Matches(thefile.getfilename, thefile.gettimespan));
 		}
 	}
 }

@@ -11,7 +11,7 @@ public:
 	void plot();
 
 private:
-	void getFileNames(const std::string dir, std::string ending);
+	void getFileNames(std::string dir, std::string ending);
 	void classifytimes();
 	void getinmatch(OFile thefile);
 	string _xmlfilename;

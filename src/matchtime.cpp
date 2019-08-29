@@ -1,7 +1,7 @@
 #include"matchtime.h"
 
 
-Matches::Matches(vector<string>& names, vector<int>& timespan): _filenames(names), _timespan(timespan)
+Matches::Matches(vector<string> names, vector<int> timespan): _filenames(names), _timespan(timespan)
 {
 }
 
@@ -19,7 +19,7 @@ bool Matches::equals(vector<int> rhs)
 	}
 }
 
-void Matches::addname(string& name)
+void Matches::addname(string name)
 {
 	this->_filenames.push_back(name);
 }

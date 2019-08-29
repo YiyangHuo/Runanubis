@@ -4,10 +4,10 @@ using namespace std;
 class Matches {
 	public:
 		vector<int> gettimespan();
-		Matches(vector<string>& names, vector<int>& timespan);
+		Matches(vector<string> names, vector<int> timespan);
 		vector<string> getnames();
 		bool equals(vector<int> rhs);
-		void addname(string& name);
+		void addname(string name);
 
 	private:
 		vector<int> _timespan;

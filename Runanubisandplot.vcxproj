@@ -154,8 +154,8 @@
   <ItemGroup>
     <ClCompile Include="Runanubisandplot.cpp" />
     <ClCompile Include="src\board.cpp" />
-    <ClCompile Include="src\fileelement.cpp" />
-    <ClCompile Include="src\readfile.cpp" />
+    <ClCompile Include="src\matchtime.cpp" />
+    <ClCompile Include="src\readofile.cpp" />
     <ClCompile Include="tinyxml\tinystr.cpp" />
     <ClCompile Include="tinyxml\tinyxml.cpp" />
     <ClCompile Include="tinyxml\tinyxmlerror.cpp" />
@@ -163,8 +163,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\board.h" />
-    <ClInclude Include="src\fileelement.h" />
-    <ClInclude Include="src\readfile.h" />
+    <ClInclude Include="src\matchtime.h" />
+    <ClInclude Include="src\readofile.h" />
     <ClInclude Include="tinyxml\tinystr.h" />
     <ClInclude Include="tinyxml\tinyxml.h" />
   </ItemGroup>
