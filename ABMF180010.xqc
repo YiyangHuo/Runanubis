@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <QC_GNSS gml:id="ABMF_20190101T000000_20190101T235930" xmlns="https://software.pecny.cz/anubis" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="https://www.w3.org/2001/XMLSchema/instance" schemaVersion="1.1">
   <meta>
-    <created>2019-08-29T06:11:10</created>
+    <created>2019-08-29T06:19:20</created>
     <program>G-Nut/Anubis [2.2.4]</program>
     <settings>
       <time_beg>2019-01-01T00:00:00</time_beg>
-      <time_end>2019-01-01T23:59:30</time_end>
+      <time_end>2019-01-02T23:59:30</time_end>
       <data_int>30.000</data_int>
       <elev_min>15.00</elev_min>
       <system type="GPS" />
@@ -15,7 +15,7 @@
   </meta>
   <navi>
     <system type="GPS" nsat="31">
-      <have>151</have>
+      <have>169</have>
     </system>
     <system type="GAL" nsat="0">
       <have>0</have>
@@ -31,10 +31,10 @@
     <numb_epo>2877</numb_epo>
     <numb_gap>0</numb_gap>
     <total>
-      <expt>75691</expt>
+      <expt>78669</expt>
       <have>71374</have>
-      <expt_usr>56503</expt_usr>
-      <have_usr>56311</have_usr>
+      <expt_usr>58434</expt_usr>
+      <have_usr>56175</have_usr>
       <elev_min>0.00</elev_min>
       <cyc_slps>543</cyc_slps>
       <clk_jmps>0</clk_jmps>
@@ -45,7 +45,7 @@
       <xint>0</xint>
       <xsys>0</xsys>
     </excluded>
-    <system type="GPS" nsat="31" xele="507">
+    <system type="GPS" nsat="31" xele="100">
       <epo>
         <expt>2880</expt>
         <have>2877</have>
@@ -67,93 +67,93 @@
       </bnd>
       <obs type="P2">
         <nsat>31</nsat>
-        <expt>36401</expt>
+        <expt>39382</expt>
         <have>32101</have>
-        <expt_usr>23763</expt_usr>
-        <have_usr>23624</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23490</have_usr>
         <mpth>27.1</mpth>
       </obs>
       <obs type="C1">
         <nsat>31</nsat>
-        <expt>36404</expt>
+        <expt>39382</expt>
         <have>32182</have>
-        <expt_usr>23765</expt_usr>
-        <have_usr>23636</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23500</have_usr>
         <mpth>24.6</mpth>
       </obs>
       <obs type="C5">
         <nsat>12</nsat>
-        <expt>36165</expt>
+        <expt>39382</expt>
         <have>12279</have>
-        <expt_usr>23566</expt_usr>
-        <have_usr>8879</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>8825</have_usr>
         <mpth>33.2</mpth>
       </obs>
       <obs type="L1">
         <nsat>31</nsat>
-        <expt>36404</expt>
+        <expt>39382</expt>
         <have>32087</have>
-        <expt_usr>23765</expt_usr>
-        <have_usr>23573</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23437</have_usr>
         <slps>434</slps>
       </obs>
       <obs type="L2">
         <nsat>31</nsat>
-        <expt>36401</expt>
+        <expt>39382</expt>
         <have>32024</have>
-        <expt_usr>23763</expt_usr>
-        <have_usr>23571</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23437</have_usr>
         <slps>491</slps>
       </obs>
       <obs type="L5">
         <nsat>12</nsat>
-        <expt>36165</expt>
+        <expt>39382</expt>
         <have>12279</have>
-        <expt_usr>23566</expt_usr>
-        <have_usr>8879</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>8825</have_usr>
         <slps>197</slps>
       </obs>
       <obs type="D1">
         <nsat>31</nsat>
-        <expt>36404</expt>
+        <expt>39382</expt>
         <have>32182</have>
-        <expt_usr>23765</expt_usr>
-        <have_usr>23636</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23500</have_usr>
       </obs>
       <obs type="D2">
         <nsat>31</nsat>
-        <expt>36401</expt>
+        <expt>39382</expt>
         <have>32101</have>
-        <expt_usr>23763</expt_usr>
-        <have_usr>23624</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23490</have_usr>
       </obs>
       <obs type="D5">
         <nsat>12</nsat>
-        <expt>36165</expt>
+        <expt>39382</expt>
         <have>12279</have>
-        <expt_usr>23566</expt_usr>
-        <have_usr>8879</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>8825</have_usr>
       </obs>
       <obs type="S1">
         <nsat>31</nsat>
-        <expt>36404</expt>
+        <expt>39382</expt>
         <have>32182</have>
-        <expt_usr>23765</expt_usr>
-        <have_usr>23636</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23500</have_usr>
       </obs>
       <obs type="S2">
         <nsat>31</nsat>
-        <expt>36401</expt>
+        <expt>39382</expt>
         <have>32101</have>
-        <expt_usr>23763</expt_usr>
-        <have_usr>23624</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>23490</have_usr>
       </obs>
       <obs type="S5">
         <nsat>12</nsat>
-        <expt>36165</expt>
+        <expt>39382</expt>
         <have>12279</have>
-        <expt_usr>23566</expt_usr>
-        <have_usr>8879</have_usr>
+        <expt_usr>25696</expt_usr>
+        <have_usr>8825</have_usr>
       </obs>
     </system>
     <system type="GAL" nsat="18" xele="16435">
@@ -381,13 +381,13 @@
     <position type="GPS" source="analysis">
       <coordinate>
         <gml:Point gml:id="GPS_analysis">
-          <gml:pos>2919786.136 -5383744.764 1774604.724</gml:pos>
+          <gml:pos>2919786.145 -5383744.800 1774604.731</gml:pos>
         </gml:Point>
       </coordinate>
       <deviation>
-        <axis name="X">1.654</axis>
-        <axis name="Y">2.229</axis>
-        <axis name="Z">1.005</axis>
+        <axis name="X">1.657</axis>
+        <axis name="Y">2.236</axis>
+        <axis name="Z">1.008</axis>
       </deviation>
     </position>
   </data>
