@@ -11,10 +11,18 @@ int main(int argc, char** argv)
 	if (argc < 4) {
 		std::cout << "wrong input. please input as [config file name] [Anubis excutable name] [skyplot excutable name]"<<std::endl;
 	}
-	Board theboard = new Board(&argv);
+	/*Board theboard = new Board(&argv);
 	theboard.runanubis();
 	theboard.getxtrs();
-	theboard.plot();
+	theboard.plot(); */
+	string firststr = argv[2];
+	firststr += " -x ";
+	firststr += argv[1];
+	const char* ha = firststr.c_str();
+	system(ha);
+	string nextstr = "python2 anubisplot.py +skyplot ABMF180010.xtr";
+	const char* da = nextstr.c_str();
+	system(da);
 	return 0;
 }
 
