@@ -1,12 +1,13 @@
 #include <vector>
 #include <string>
 using namespace std;
-class Fileelement {
+class Matches {
 	public:
 		vector<int> gettimespan();
-		Fileelement(vector<string>& names, vector<int>& timespan);
-
+		Matches(vector<string>& names, vector<int>& timespan);
 		vector<string> getnames();
+		bool equals(vector<int> rhs);
+		void addname(string& name);
 
 	private:
 		vector<int> _timespan;

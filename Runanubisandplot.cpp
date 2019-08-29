@@ -11,10 +11,10 @@ int main(int argc, char** argv)
 	if (argc < 4) {
 		std::cout << "wrong input. please input as [config file name] [Anubis excutable name] [skyplot excutable name]"<<std::endl;
 	}
-	/*Board theboard = new Board(&argv);
+	Board theboard(argv);
 	theboard.runanubis();
 	theboard.getxtrs();
-	theboard.plot(); */
+	theboard.plot(); 
 	string firststr = argv[2];
 	firststr += " -x ";
 	firststr += argv[1];
