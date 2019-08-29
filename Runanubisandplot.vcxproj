@@ -153,6 +153,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Runanubisandplot.cpp" />
+    <ClCompile Include="src\fileelement.cpp" />
+    <ClCompile Include="src\readfile.cpp" />
+    <ClCompile Include="tinyxml\tinystr.cpp" />
+    <ClCompile Include="tinyxml\tinyxml.cpp" />
+    <ClCompile Include="tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxml\tinyxmlparser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\fileelement.h" />
+    <ClInclude Include="src\readfile.h" />
+    <ClInclude Include="tinyxml\tinystr.h" />
+    <ClInclude Include="tinyxml\tinyxml.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
