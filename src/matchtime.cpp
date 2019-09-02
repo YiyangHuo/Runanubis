@@ -11,11 +11,16 @@ vector<string> Matches::getnames(){
 
 bool Matches::equals(vector<int> rhs)
 {
-	if (this->gettimespan == rhs) {
-		return true;
+	if (this->gettimespan().size()!=rhs.size()) {
+		return false;
 	}
 	else {
-		return false;
+		for (int count = 0; count < rhs.size(); count++) {
+			if (this->gettimespan()[count] != rhs[count]) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
 

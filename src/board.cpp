@@ -40,11 +40,13 @@ void Board::classifytimes(){
 void Board::getinmatch(OFile thefile)
 {
 	for (Matches match : _matches) {
-		if (match.equals(thefile.getfilename)) {
-			match.addname(thefile.getfilename);
-			return;
-
-			_matches.push_back(Matches(thefile.getfilename, thefile.gettimespan));
+		if (match.equals(thefile.gettimespan())) {
+			match.addname(thefile.getfilename());
+			return;	
 		}
 	}
+	vector<string> newmatch;
+	newmatch.push_back(thefile.getfilename());
+	_matches.push_back(Matches(newmatch, thefile.gettimespan()));
+	return;
 }
