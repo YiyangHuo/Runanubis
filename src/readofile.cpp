@@ -10,13 +10,14 @@ OFile::OFile(string& filename)
 		if (pos != line.npos) {
 			string temp = "";
 			for (int i = 0; i < line.length(); i++) {
-				if (line[i] != ' ' && _timespan.size() < 7) {
+				if (line[i] != ' ') {
 					temp.push_back(line[i]);
 				}
 				else if (!temp._Equal("")) {
 					_timespan.push_back(stoi(temp));
 					temp = "";
 				}
+				if (_timespan.size() >= 6) break;
 			}
 		}
 	}
