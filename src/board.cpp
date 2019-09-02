@@ -84,15 +84,34 @@ void Board::writeXmlFiles()
 		string newconfname = _xmlfilename + to_string(numf+1);
 		_newconfnames.push_back(newconfname);
 		TiXmlElement* RootElement = theconf->RootElement();
-		TiXmlElement* beg = RootElement->FirstChildElement()->FirstChildElement();
+		TiXmlElement* beg = RootElement->FirstChildElement("gen")->FirstChildElement("beg");
 		TiXmlNode* oldbeg = beg->FirstChild();
-		TiXmlText newText("12345");
+		string thenew = getnewtext(_matches[numf]);
+		TiXmlText newText(thenew.c_str());
 		beg->ReplaceChild(oldbeg, newText);
-		
-		std::cout << beg->GetText(); 
+		// insert successfull, make it a comment: std::cout << beg->GetText(); 
 		theconf->SaveFile(newconfname.c_str());
+		//这个地方会把双引号转义，但是没有关系，anubis还是会照样读
 
 		
 	}
 
+}
+
+string Board::to2digitstr(int num)
+{
+	string tmp;
+	if (num < 10) {
+		tmp += "0";
+	}
+	tmp += to_string(num);
+	return tmp;
+}
+
+string Board::getnewtext(Matches &currentmatch)
+{
+	string output ="";
+	vector<int> timespan = currentmatch.gettimespan();
+	output += '"' + to_string(timespan[0]) + "-" + to2digitstr(timespan[1]) + "-" + to2digitstr(timespan[2]) + " " + to2digitstr(timespan[3]) + ":" + to2digitstr(timespan[4]) + ":" + to2digitstr(timespan[5]) + '"';
+	return output;
 }

@@ -18,6 +18,8 @@ private:
 	void classifyTimes();
 	void getInMatch(OFile thefile);
 	void writeXmlFiles();
+	string to2digitstr(int num);
+	string getnewtext(Matches &currentmatch);
 	string _path;
 	string _xmlfilename;
 	string _excufilename;
