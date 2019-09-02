@@ -75,16 +75,22 @@ void Board::writeXmlFiles()
 {
 	string confpath = _path +"\\"+ _xmlfilename;
 	for (int numf = 0; numf < _matches.size(); numf++) {
-		TiXmlDocument theconf(confpath.c_str());
-		bool loadsuccess = theconf.LoadFile();
+		TiXmlDocument* theconf = new TiXmlDocument(confpath.c_str());
+		bool loadsuccess = theconf->LoadFile();
 		if (!loadsuccess) {
 			std::cout << "cannot load conf file, please check your argument input" << std::endl;
 			exit(1);
 		}
 		string newconfname = _xmlfilename + to_string(numf+1);
 		_newconfnames.push_back(newconfname);
-		TiXmlElement* RootElement = theconf.RootElement();
-		//std::cout << RootElement->Value(); successfull
+		TiXmlElement* RootElement = theconf->RootElement();
+		TiXmlElement* beg = RootElement->FirstChildElement()->FirstChildElement();
+		TiXmlNode* oldbeg = beg->FirstChild();
+		TiXmlText newText("12345");
+		beg->ReplaceChild(oldbeg, newText);
+		
+		std::cout << beg->GetText(); 
+		theconf->SaveFile(newconfname.c_str());
 
 		
 	}
