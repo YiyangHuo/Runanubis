@@ -18,8 +18,9 @@ private:
 	void classifyTimes();
 	void getInMatch(OFile thefile);
 	void writeXmlFiles();
-	string to2digitstr(int num);
-	string getnewtext(Matches &currentmatch);
+	string fileNameStr(char filetype, Matches &currentmatch);
+	string to2DigitStr(int num);
+	string getNewTime(Matches &currentmatch);
 	string _path;
 	string _xmlfilename;
 	string _excufilename;

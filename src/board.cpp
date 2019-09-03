@@ -86,19 +86,54 @@ void Board::writeXmlFiles()
 		TiXmlElement* RootElement = theconf->RootElement();
 		TiXmlElement* beg = RootElement->FirstChildElement("gen")->FirstChildElement("beg");
 		TiXmlNode* oldbeg = beg->FirstChild();
-		string thenew = getnewtext(_matches[numf]);
+		string thenew = getNewTime(_matches[numf]);
 		TiXmlText newText(thenew.c_str());
 		beg->ReplaceChild(oldbeg, newText);
 		// insert successfull, make it a comment: std::cout << beg->GetText(); 
+		TiXmlElement* rinexo = RootElement->FirstChildElement("inputs")->FirstChildElement("rinexo");
+		TiXmlElement* rinexn = RootElement->FirstChildElement("inputs")->FirstChildElement("rinenn");
+		TiXmlNode* oldo = rinexo->FirstChild();
+		TiXmlNode* oldn = rinexo->FirstChild();
+		string newo = fileNameStr('o', _matches[numf]);
+		string newn = fileNameStr('n', _matches[numf]);
+		TiXmlText newoText(newo.c_str());
+		TiXmlText newnText(newn.c_str());
+		rinexo->ReplaceChild(oldo, newoText);
+		rinexn->ReplaceChild(oldn, newnText);// change the input file name
+		TiXmlElement* log = RootElement->FirstChildElement("outputs")->FirstChildElement("log");
+		TiXmlNode* oldlog = log->FirstChild();
+		string newlog = log->GetText() + to_string(numf);
+		TiXmlText newlogText(newlog.c_str());
+		log->ReplaceChild(oldlog, newlogText);
+		//successfully get the value :cout << oldo->Value() << "\ ";
 		theconf->SaveFile(newconfname.c_str());
+		delete theconf;
 		//这个地方会把双引号转义，但是没有关系，anubis还是会照样读
-
+		//还忘了把同类时间的文件对conf进行修改
 		
 	}
 
 }
 
-string Board::to2digitstr(int num)
+string Board::fileNameStr(char filetype, Matches& currentmatch)
+{	
+	string rtr;
+	if (filetype == 'o') {
+		for (int i = 0; i < currentmatch.getnames().size(); i++) {
+			rtr += currentmatch.getnames()[i];
+		}
+	}
+	else if (filetype == 'n') {
+		for (int i = 0; i < currentmatch.getnames().size(); i++) {
+			string nname = currentmatch.getnames()[i];
+			nname = nname.substr(0, nname.size() - 1) + 'n';
+			rtr += nname;
+		}
+	}
+	return rtr;
+}
+
+string Board::to2DigitStr(int num)
 {
 	string tmp;
 	if (num < 10) {
@@ -108,10 +143,10 @@ string Board::to2digitstr(int num)
 	return tmp;
 }
 
-string Board::getnewtext(Matches &currentmatch)
+string Board::getNewTime(Matches &currentmatch)
 {
 	string output ="";
 	vector<int> timespan = currentmatch.gettimespan();
-	output += '"' + to_string(timespan[0]) + "-" + to2digitstr(timespan[1]) + "-" + to2digitstr(timespan[2]) + " " + to2digitstr(timespan[3]) + ":" + to2digitstr(timespan[4]) + ":" + to2digitstr(timespan[5]) + '"';
+	output += '"' + to_string(timespan[0]) + "-" + to2DigitStr(timespan[1]) + "-" + to2DigitStr(timespan[2]) + " " + to2DigitStr(timespan[3]) + ":" + to2DigitStr(timespan[4]) + ":" + to2DigitStr(timespan[5]) + '"';
 	return output;
 }
