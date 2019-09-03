@@ -6,6 +6,17 @@
 ## 软件用法
 
 * 1. 环境配置
+
      * 为了运行 "anubisplot.py"，我们需要安装python2(我安装的是python 2.7.16) 和其需要的库 "matplotlib"(我安装的是1.4.0版本) 以及 "numpy"(我安装的是1.10.4版本)，这里我没有选择安装官方文档中要求的更老版本的原因是只有我装的版本才能够不通过编译源码快速的在windows 环境下成功安装。
+
   2. 软件准备
-     * 如filedemo文件夹下一样，将编译完成的 "Runanubisplot.exe" 与 "Anubis.exe" (编译完成的G-nut Anubis，可直接使用)， "anubisplot.py" (用于绘制skyplot的python脚本，可在官网找到）， 观测文件和配置文件放在同一目录下。
+
+     * 如filedemo文件夹下一样，将编译完成的 "Runanubisplot.exe" 与 "Anubis.exe" (编译完成的G-nut Anubis，可直接使用)， "anubisplot.py" (用于绘制skyplot的python脚本，可在官网找到）， 观测文件和配置文件放在同一目录下。在配置文件的<rec>节点下中输入所有观测站的四字简称。
+
+  3. 运行软件
+
+     * 打开cmd到刚才配置的文件夹目录，输入
+
+       "Runanubisandplot.exe  [配置文件的名字] [G-nut Anubis 可执行文件的名字] [画图程序的名字]"
+
+       而后理论上讲就可以成功将起始，终止时间注入config文件然后分别运行Anubis，最后运行画skyplot的程序了。
