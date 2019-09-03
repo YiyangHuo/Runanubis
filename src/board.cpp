@@ -16,12 +16,22 @@ Board::Board(char**& argv):_xmlfilename(argv[1]),_excufilename(argv[2]),_plotfil
 void Board::runanubis()
 {
 	writeXmlFiles();
+	for (int num = 0; num < _newconfnames.size(); num++) {
+		string runcommandline = _excufilename + " " + "-x " + _newconfnames[num];
+		system(runcommandline.c_str());
+	}//call cmd and run
 }
 void Board::getxtrs()
+
 {
+	getFileNames(_path, false);
 }
 void Board::plot()
 {
+	for (int num = 0; num < _xtrfilenames.size(); num++) {
+		string plotcommandline = "python2 " + _plotfilename + " +skyplot " + _xtrfilenames[num];
+		system(plotcommandline.c_str());
+	}
 }
 void Board::getFileNames(std::string dir, bool isonfiles)
 {

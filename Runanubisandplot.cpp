@@ -15,14 +15,14 @@ int main(int argc, char** argv)
 	theboard.runanubis();
 	theboard.getxtrs();
 	theboard.plot(); 
-	string firststr = argv[2];
+	/*string firststr = argv[2];
 	firststr += " -x ";
 	firststr += argv[1];
 	const char* ha = firststr.c_str();
 	system(ha);
 	string nextstr = "python2 anubisplot.py +skyplot ABMF180010.xtr";
 	const char* da = nextstr.c_str();
-	system(da);
+	system(da);*/
 	return 0;
 }
 
