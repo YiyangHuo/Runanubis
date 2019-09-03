@@ -91,9 +91,9 @@ void Board::writeXmlFiles()
 		beg->ReplaceChild(oldbeg, newText);
 		// insert successfull, make it a comment: std::cout << beg->GetText(); 
 		TiXmlElement* rinexo = RootElement->FirstChildElement("inputs")->FirstChildElement("rinexo");
-		TiXmlElement* rinexn = RootElement->FirstChildElement("inputs")->FirstChildElement("rinenn");
+		TiXmlElement* rinexn = RootElement->FirstChildElement("inputs")->FirstChildElement("rinexn");
 		TiXmlNode* oldo = rinexo->FirstChild();
-		TiXmlNode* oldn = rinexo->FirstChild();
+		TiXmlNode* oldn = rinexn->FirstChild();
 		string newo = fileNameStr('o', _matches[numf]);
 		string newn = fileNameStr('n', _matches[numf]);
 		TiXmlText newoText(newo.c_str());
@@ -102,7 +102,7 @@ void Board::writeXmlFiles()
 		rinexn->ReplaceChild(oldn, newnText);// change the input file name
 		TiXmlElement* log = RootElement->FirstChildElement("outputs")->FirstChildElement("log");
 		TiXmlNode* oldlog = log->FirstChild();
-		string newlog = log->GetText() + to_string(numf);
+		string newlog = log->GetText() + to_string(numf+1);
 		TiXmlText newlogText(newlog.c_str());
 		log->ReplaceChild(oldlog, newlogText);
 		//successfully get the value :cout << oldo->Value() << "\ ";
