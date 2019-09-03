@@ -116,6 +116,18 @@ void Board::writeXmlFiles()
 		TiXmlText newlogText(newlog.c_str());
 		log->ReplaceChild(oldlog, newlogText);
 		//successfully get the value :cout << oldo->Value() << "\ ";
+		TiXmlElement* outxtr = RootElement->FirstChildElement("outputs")->FirstChildElement("xtr");
+		TiXmlNode* oldxtr = outxtr->FirstChild();
+		string filename = _matches[numf].getnames()[0];
+		string newxtr = "$(rec)" + filename.substr(filename.size() - 3, 2) + filename.substr(filename.size() - 8, 4) + ".xtr";
+		TiXmlText newxtrText(newxtr.c_str());
+		outxtr->ReplaceChild(oldxtr, newxtrText);
+
+		TiXmlElement* outxqc = RootElement->FirstChildElement("outputs")->FirstChildElement("xml");
+		TiXmlNode* oldxqc = outxqc->FirstChild();
+		string newxqc = "$(rec)" + filename.substr(filename.size() - 3, 2) + filename.substr(filename.size() - 8, 4) + ".xqc";
+		TiXmlText newxqcText(newxqc.c_str());
+		outxqc->ReplaceChild(oldxqc, newxqcText);
 		theconf->SaveFile(newconfname.c_str());
 		delete theconf;
 		//这个地方会把双引号转义，但是没有关系，anubis还是会照样读
