@@ -7,11 +7,13 @@
 
 int main(int argc, char** argv)
 {
-	std::cout << "Please make sure that your config, datas and excutable Anubis file are in the same directory" << std::endl;
+	
 	if (argc < 4) {
 		std::cout << "wrong input. please input as [config file name] [Anubis excutable name] [skyplot excutable name]"<<std::endl;
+		exit(1);
 	}
 	Board theboard(argv);
+	std::cout << "Your input is correct, program is runing ... " << std::endl;
 	theboard.runanubis();
 	theboard.getxtrs();
 	theboard.plot(); 
