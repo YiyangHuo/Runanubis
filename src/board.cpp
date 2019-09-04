@@ -1,16 +1,14 @@
 #include "board.h"
 
 Board::Board(char**& argv):_xmlfilename(argv[1]),_excufilename(argv[2]),_plotfilename(argv[3]){
-	std::string argv_str(argv[0]);
-	for (int index = argv_str.size() - 1; index >= 0; index--) {
-		if (argv_str[index] == '\\') {
-			argv_str = argv_str.substr(0, index);
-			break;
-		}
-	}
+	char buffer[100];
+	_getcwd(buffer,100);
+	string argv_str = buffer;
 	_path = argv_str;
+	//std::cout << _path;
 	getFileNames(argv_str, true);
 	classifyTimes();
+	//std::cout << _matches[0].gettimespan()[0] << _matches[1].gettimespan()[0];
 }
 
 void Board::runanubis()

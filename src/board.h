@@ -4,6 +4,7 @@
 #include <experimental/filesystem> 
 #include "tinyxml.h"
 #include <stdio.h> 
+#include <direct.h>
 #include <iostream> 
 namespace fs = std::experimental::filesystem;
 class Board {

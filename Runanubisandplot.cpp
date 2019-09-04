@@ -25,6 +25,7 @@ int main(int argc, char** argv)
 	string nextstr = "python2 anubisplot.py +skyplot ABMF180010.xtr";
 	const char* da = nextstr.c_str();
 	system(da);*/
+	system ("pause");
 	return 0;
 }
 
