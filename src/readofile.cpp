@@ -20,6 +20,7 @@ OFile::OFile(string& filename)
 				if (_timespan.size() >= 6) break;
 			}
 		}
+		if (_timespan.size() >= 6) break;
 	}
 }
 

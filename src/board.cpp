@@ -69,9 +69,9 @@ void Board::classifyTimes(){
 
 void Board::getInMatch(OFile thefile)
 {
-	for (Matches match : _matches) {
-		if (match.equals(thefile.gettimespan())) {
-			match.addname(thefile.getfilename());
+	for (int i = 0; i < _matches.size();i++) {
+		if (_matches[i].equals(thefile.gettimespan())) {
+			_matches[i].addname(thefile.getfilename());
 			return;	
 		}
 	}
@@ -96,9 +96,15 @@ void Board::writeXmlFiles()
 		TiXmlElement* RootElement = theconf->RootElement();
 		TiXmlElement* beg = RootElement->FirstChildElement("gen")->FirstChildElement("beg");
 		TiXmlNode* oldbeg = beg->FirstChild();
-		string thenew = getNewTime(_matches[numf]);
-		TiXmlText newText(thenew.c_str());
-		beg->ReplaceChild(oldbeg, newText);
+		string thenew = getNewTime(_matches[numf],true);
+		TiXmlText newbeg(thenew.c_str());
+		beg->ReplaceChild(oldbeg, newbeg);
+		TiXmlElement* end = RootElement->FirstChildElement("gen")->FirstChildElement("end");
+		TiXmlNode* oldend = end->FirstChild();
+		string thenewend = getNewTime(_matches[numf], false);
+		TiXmlText newend(thenewend.c_str());
+		end->ReplaceChild(oldend, newend);
+
 		// insert successfull, make it a comment: std::cout << beg->GetText(); 
 		TiXmlElement* rinexo = RootElement->FirstChildElement("inputs")->FirstChildElement("rinexo");
 		TiXmlElement* rinexn = RootElement->FirstChildElement("inputs")->FirstChildElement("rinexn");
@@ -142,13 +148,13 @@ string Board::fileNameStr(char filetype, Matches& currentmatch)
 	string rtr;
 	if (filetype == 'o') {
 		for (int i = 0; i < currentmatch.getnames().size(); i++) {
-			rtr += currentmatch.getnames()[i];
+			rtr += currentmatch.getnames()[i] + " ";
 		}
 	}
 	else if (filetype == 'n') {
 		for (int i = 0; i < currentmatch.getnames().size(); i++) {
 			string nname = currentmatch.getnames()[i];
-			nname = nname.substr(0, nname.size() - 1) + 'n';
+			nname = nname.substr(0, nname.size() - 1) + 'n' + " ";
 			rtr += nname;
 		}
 	}
@@ -165,10 +171,16 @@ string Board::to2DigitStr(int num)
 	return tmp;
 }
 
-string Board::getNewTime(Matches &currentmatch)
+string Board::getNewTime(Matches &currentmatch, bool iso)
 {
 	string output ="";
 	vector<int> timespan = currentmatch.gettimespan();
-	output += '"' + to_string(timespan[0]) + "-" + to2DigitStr(timespan[1]) + "-" + to2DigitStr(timespan[2]) + " " + to2DigitStr(timespan[3]) + ":" + to2DigitStr(timespan[4]) + ":" + to2DigitStr(timespan[5]) + '"';
+	if (iso) {
+		output += '"' + to_string(timespan[0]) + "-" + to2DigitStr(timespan[1]) + "-" + to2DigitStr(timespan[2]) + " " + to2DigitStr(timespan[3]) + ":" + to2DigitStr(timespan[4]) + ":" + to2DigitStr(timespan[5]) + '"';
+	}
+	else
+	{
+		output += '"' + to_string(timespan[0]) + "-" + to2DigitStr(timespan[1]) + "-" + to2DigitStr(timespan[2]+1) + " " + to2DigitStr(timespan[3]) + ":" + to2DigitStr(timespan[4]) + ":" + to2DigitStr(timespan[5]) + '"';
+	}
 	return output;
 }

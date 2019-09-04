@@ -20,7 +20,7 @@ private:
 	void writeXmlFiles();
 	string fileNameStr(char filetype, Matches &currentmatch);
 	string to2DigitStr(int num);
-	string getNewTime(Matches &currentmatch);
+	string getNewTime(Matches &currentmatch, bool iso);
 	string _path;
 	string _xmlfilename;
 	string _excufilename;
